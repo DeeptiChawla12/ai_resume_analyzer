@@ -1,62 +1,72 @@
-# AI Resume Analyzer
+# 🚀 AI Resume Analyzer & Interview Assistant
 
-AI Resume Analyzer is an AI-powered ATS (Applicant Tracking System) tool that compares a candidate’s resume with a job description and provides an ATS score, skills match analysis, missing skills, and improvement suggestions.
-
-This project helps job seekers optimize their resumes to improve their chances of passing ATS screening systems used by companies during recruitment.
+An AI-powered ATS (Applicant Tracking System) tool that analyzes resumes against job descriptions and provides actionable insights to improve job readiness.
 
 ---
 
-# Features
+## 📌 Overview
 
-• Upload Resume  
-• Store resume securely in Azure Blob Storage  
-• Paste Job Description  
-• AI-powered Resume vs Job Description comparison  
-• ATS Score calculation  
-• Matched Skills detection  
-• Missing Skills identification  
-• AI suggestions to improve resume  
-• ATS issues detection  
-• Interview question generation  
-• Resume analysis report download  
-• Loader / progress indicator while AI analysis runs  
+This application helps job seekers understand how well their resume matches a specific role.
 
----
+Users can upload a resume and provide a job description to instantly receive:
 
-# Tech Stack
+- ✅ ATS Match Score  
+- ✅ Matched Skills  
+- ❌ Missing Skills  
+- 💡 Improvement Suggestions  
+- 🎯 Interview Questions  
+- ⚠️ ATS Issues Detection  
 
-### Frontend
-- HTML
-- CSS
-- JavaScript
-
-### Backend
-- Python
-- FastAPI
-
-### AI Integration
-- Azure AI Foundry (Azure OpenAI)
-
-### Cloud Services
-- Azure Blob Storage
-
-### Tools
-- REST APIs
-- CORS Middleware
+The goal is to reduce manual effort and provide data-driven decision support for resume optimization.
 
 ---
 
-# Azure Services Used
+## 🎥 Demo
 
-### Azure AI Foundry
-Used to deploy and run the AI model that analyzes the resume and job description.
+👉 Video Walkthrough: [Add Loom Link Here]
 
-### Azure Blob Storage
-Used to securely store uploaded resume files before processing.
+👉 Screenshots:
+- Resume Upload  
+- ATS Score Output  
+- Skills Analysis  
+- Suggestions & Insights  
+
+(Add your screenshots here)
 
 ---
 
-# Project Architecture
+## ⚙️ Key Features
+
+- Upload resume (PDF)
+- Store files securely using Azure Blob Storage
+- Paste job description
+- AI-powered resume vs job description analysis
+- ATS score calculation
+- Skill matching and gap detection
+- Resume improvement suggestions
+- ATS issue detection (formatting issues, etc.)
+- Interview question generation
+- Loading/progress indicator for better UX
+
+---
+
+## 🧠 How It Works
+
+1. User uploads a resume  
+2. Resume is stored in Azure Blob Storage  
+3. User provides a job description  
+4. Backend sends data to Azure AI model  
+5. AI analyzes content and returns:
+   - ATS score  
+   - Skills match  
+   - Missing skills  
+   - Suggestions  
+   - Interview questions  
+   - ATS issues  
+
+---
+
+## 🏗️ Architecture
 
 ```
 User
@@ -65,16 +75,47 @@ Frontend (HTML / CSS / JS)
   ↓
 FastAPI Backend
   ↓
-Azure Blob Storage (Store Resume)
+Azure Blob Storage (Resume Storage)
   ↓
-Azure AI Foundry (Resume Analysis)
+Azure AI Foundry (Analysis Engine)
   ↓
-Return ATS Score + Suggestions
+Results (Score + Insights)
 ```
 
 ---
 
-# Project Structure
+## 💼 Business Use Case
+
+This system can be extended into real-world applications such as:
+
+- Resume screening for HR teams  
+- Workforce skill gap analysis  
+- Internal hiring automation  
+- Document analysis systems  
+- Decision-support tools  
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- HTML  
+- CSS  
+- JavaScript  
+
+### Backend
+- Python  
+- FastAPI  
+
+### AI Integration
+- Azure AI Foundry (Azure OpenAI)  
+
+### Cloud
+- Azure Blob Storage  
+
+---
+
+## 📂 Project Structure
 
 ```
 ai-resume-analyzer
@@ -86,134 +127,96 @@ ai-resume-analyzer
 │
 ├── frontend
 │   ├── index.html
-│   ├── css
-│   │   └── style.css
-│   └── js
-│       └── script.js
+│   ├── css/style.css
+│   └── js/script.js
 ```
 
 ---
 
-# How It Works
+## 🔌 API Endpoint
 
-1. User uploads a resume file.
-2. Resume is uploaded to **Azure Blob Storage**.
-3. User pastes the job description.
-4. Backend sends resume content and job description to **Azure AI Foundry**.
-5. AI analyzes the resume.
-6. The system returns:
+POST /upload-resume
 
-- ATS Score
-- Matched Skills
-- Missing Skills
-- Resume Improvement Suggestions
-- ATS Issues
-- Interview Questions
+### Request:
+- Resume file  
+- Job description  
+
+### Response:
+```json
+{
+  "ATS_score": 85,
+  "skills_detected": ["Swift", "iOS", "MVVM"],
+  "missing_skills": ["CI/CD", "Unit Testing"],
+  "suggestions": ["Add CI/CD pipeline experience"],
+  "interview_questions": ["Explain MVVM architecture"],
+  "ats_issues": ["Resume contains tables"]
+}
+```
 
 ---
 
-# Installation
+## ⚙️ Setup
 
-## 1 Clone the repository
-
+### 1. Clone Repository
 ```
 git clone https://github.com/yourusername/ai-resume-analyzer.git
 ```
 
----
-
-## 2 Install dependencies
-
+### 2. Install Dependencies
 ```
-pip install fastapi
-pip install uvicorn
-pip install azure-storage-blob
-pip install openai
+pip install fastapi uvicorn azure-storage-blob openai
 ```
 
----
-
-## 3 Configure Azure AI Foundry
-
-Add your Azure OpenAI credentials in your backend configuration:
-
+### 3. Configure Azure AI
 ```
 AZURE_OPENAI_API_KEY=your_api_key
 AZURE_OPENAI_ENDPOINT=your_endpoint
-AZURE_OPENAI_DEPLOYMENT=your_model_deployment
+AZURE_OPENAI_DEPLOYMENT=your_model
 ```
 
----
-
-## 4 Configure Azure Blob Storage
-
-Add your storage connection string:
-
+### 4. Configure Azure Storage
 ```
-AZURE_STORAGE_CONNECTION_STRING=your_connection_string
+AZURE_STORAGE_CONNECTION_STRING=your_connection
 CONTAINER_NAME=resumes
 ```
 
----
-
-## 5 Run the backend server
-
+### 5. Run Backend
 ```
 uvicorn main:app --reload
 ```
 
-Server will start at:
-
-```
-http://127.0.0.1:8000
-```
-
----
-
-## 6 Run the frontend
-
-Open the frontend file in your browser:
-
+### 6. Run Frontend
+Open in browser:
 ```
 frontend/index.html
 ```
 
 ---
 
-# API Endpoint
+## 🚧 Future Improvements
 
-### POST
-
-```
-/upload-resume
-```
-
-### Request Parameters
-
-- Resume file
-- Job description text
-
-### Example Response
-
-```
-{
- "ATS_score": 85,
- "skills_detected": ["Swift", "iOS", "MVVM"],
- "missing_skills": ["CI/CD", "Unit Testing"],
- "suggestions": ["Add CI/CD pipeline experience"],
- "interview_questions": ["Explain MVVM architecture"],
- "ats_issues": ["Resume contains tables"]
-}
-```
+- Resume parsing (auto-extract fields)  
+- ATS score visualization  
+- AI-based resume rewriting  
+- PDF report generation  
+- Multi-resume comparison  
+- Authentication & dashboard  
+- Full cloud deployment  
 
 ---
 
-# Future Improvements
+## ⭐ Why This Project Matters
 
-- Resume parsing (extract name, email, skills)
-- ATS score visualization charts
-- Resume rewriting using AI
-- PDF report generation
-- Multiple resume comparison
-- Authentication system
-- Cloud deployment
+This project demonstrates the ability to:
+
+- Build end-to-end AI systems  
+- Integrate cloud services with AI  
+- Solve real-world problems  
+- Deliver practical and user-focused tools  
+
+---
+
+## 📬 Contact
+
+Deepti Chawla  
+Email: deeptichawla1994@gmail.com
