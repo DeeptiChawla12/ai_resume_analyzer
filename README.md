@@ -23,7 +23,7 @@ The goal is to reduce manual effort and provide data-driven decision support for
 
 ## 🎥 Demo
 
-👉 Video Walkthrough: [Add Loom Link Here]
+👉 Video Walkthrough: https://drive.google.com/file/d/1YGMONt07F4CvaKsECe3h8xmPUgEC9aJo/view?usp=sharing
 
 👉 Screenshots:
 - Resume Upload  
