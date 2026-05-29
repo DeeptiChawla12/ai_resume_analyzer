@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Professional Resume</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#f3f4f6;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    padding:20px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+
+    width:210mm;
+
+    margin:auto;
+
+    margin-bottom:15px;
+
+    display:flex;
+
+    gap:10px;
+}
+
+.btn{
+
+    border:none;
+
+    padding:10px 16px;
+
+    border-radius:6px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+.back-btn{
+
+    background:#374151;
+
+    color:white;
+}
+
+.download-btn{
+
+    background:#2563eb;
+
+    color:white;
+}
+
+/* =========================
+   RESUME
+========================= */
+
+.resume{
+
+    width:210mm;
+
+    min-height:297mm;
+
+    margin:auto;
+
+    background:white;
+
+    padding:24mm 18mm;
+
+    color:#111827;
+
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:24px;
+}
+
+.name{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    letter-spacing:0.5px;
+}
+
+.title{
+
+    margin-top:5px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#2563eb;
+}
+
+.contact{
+
+    margin-top:10px;
+
+    font-size:11px;
+
+    line-height:1.6;
+
+    color:#4b5563;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+
+    margin-top:20px;
+}
+
+.section-title{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    border-bottom:2px solid #2563eb;
+
+    padding-bottom:5px;
+
+    margin-bottom:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:0.7px;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+
+.summary{
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    color:#374151;
+
+    text-align:justify;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+}
+
+.skill{
+
+    padding:6px 12px;
+
+    background:#eef2ff;
+
+    border-radius:5px;
+
+    font-size:11px;
+
+    color:#111827;
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.job{
+
+    margin-bottom:20px;
+}
+
+.job-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    margin-bottom:6px;
+}
+
+.job-left{
+
+    flex:1;
+}
+
+.job-role{
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+.job-company{
+
+    font-size:12px;
+
+    font-weight:600;
+
+    color:#2563eb;
+
+    margin-top:2px;
+}
+
+.job-location{
+
+    font-size:11px;
+
+    color:#6b7280;
+
+    margin-top:2px;
+}
+
+.job-duration{
+
+    font-size:11px;
+
+    color:#6b7280;
+
+    white-space:nowrap;
+}
+
+/* =========================
+   LIST
+========================= */
+
+ul{
+
+    padding-left:18px;
+
+    margin-top:8px;
+}
+
+li{
+
+    font-size:11px;
+
+    line-height:1.7;
+
+    margin-bottom:4px;
+
+    color:#374151;
+}
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education{
+
+    margin-bottom:14px;
+}
+
+.edu-degree{
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+.edu-school{
+
+    font-size:12px;
+
+    color:#2563eb;
+
+    margin-top:2px;
+}
+
+.edu-year{
+
+    font-size:11px;
+
+    color:#6b7280;
+
+    margin-top:2px;
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.error{
+
+    text-align:center;
+
+    padding:40px;
+
+    font-size:20px;
+
+    color:red;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    body{
+        padding:10px;
+    }
+
+    .topbar{
+
+        width:100%;
+
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .resume{
+
+        width:100%;
+
+        min-height:auto;
+
+        padding:24px;
+    }
+
+    .job-top{
+        flex-direction:column;
+    }
+
+    .job-duration{
+        white-space:normal;
+    }
+}
+
+/* =========================
+   PRINT
+========================= */
+
+@media print{
+
+    body{
+
+        background:white;
+
+        padding:0;
+    }
+
+    .topbar{
+        display:none;
+    }
+
+    .resume{
+
+        width:100%;
+
+        min-height:auto;
+
+        box-shadow:none;
+
+        padding:20mm 16mm;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+    <button class="btn back-btn"
+        onclick="history.back()">
+        ← Back
+    </button>
+
+    <button class="btn download-btn"
+        onclick="downloadPDF()">
+        Download PDF
+    </button>
+
+</div>
+
+<!-- RESUME -->
+
+<div class="resume" id="resumeContent">
+
+</div>
+
+<script>
+
+const rawData =
+    localStorage.getItem("generatedResume");
+
+console.log("RAW DATA:", rawData);
+
+if(!rawData){
+
+    document.getElementById("resumeContent").innerHTML = `
+        <div class="error">
+            No Resume Data Found
+        </div>
+    `;
+}
+
+else{
+
+    const data = JSON.parse(rawData);
+
+    console.log("PARSED DATA:", data);
+
+    document.getElementById("resumeContent").innerHTML = `
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="name">
+            ${data.name || ""}
+        </div>
+
+        <div class="title">
+            ${data.title || ""}
+        </div>
+
+        <div class="contact">
+            ${data.contact || ""}
+        </div>
+
+    </div>
+
+    <!-- SUMMARY -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Professional Summary
+        </div>
+
+        <div class="summary">
+            ${data.summary || ""}
+        </div>
+
+    </div>
+
+    <!-- SKILLS -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Technical Skills
+        </div>
+
+        <div class="skills">
+
+            ${(data.skills || [])
+                .map(skill => `
+                    <div class="skill">
+                        ${skill}
+                    </div>
+                `)
+                .join("")}
+
+        </div>
+
+    </div>
+
+    <!-- EXPERIENCE -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Professional Experience
+        </div>
+
+        ${(data.experience || [])
+            .map(exp => `
+
+            <div class="job">
+
+                <div class="job-top">
+
+                    <div class="job-left">
+
+                        <div class="job-role">
+                            ${exp.role || ""}
+                        </div>
+
+                        <div class="job-company">
+                            ${exp.company || ""}
+                        </div>
+
+                        <div class="job-location">
+                            ${exp.location || ""}
+                        </div>
+
+                    </div>
+
+                    <div class="job-duration">
+                        ${exp.duration || ""}
+                    </div>
+
+                </div>
+
+                <ul>
+
+                    ${(exp.points || [])
+                        .map(point => `
+                            <li>${point}</li>
+                        `)
+                        .join("")}
+
+                </ul>
+
+            </div>
+
+            `)
+            .join("")}
+
+    </div>
+
+    <!-- PROJECTS -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Projects
+        </div>
+
+        ${(data.projects || [])
+            .map(project => `
+
+            <div class="job">
+
+                <div class="job-role">
+                    ${project.title || ""}
+                </div>
+
+                <ul>
+
+                    ${(project.points || [])
+                        .map(point => `
+                            <li>${point}</li>
+                        `)
+                        .join("")}
+
+                </ul>
+
+            </div>
+
+            `)
+            .join("")}
+
+    </div>
+
+    <!-- EDUCATION -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Education
+        </div>
+
+        ${(data.education || [])
+            .map(edu => `
+
+            <div class="education">
+
+                <div class="edu-degree">
+                    ${edu.degree || ""}
+                </div>
+
+                <div class="edu-school">
+                    ${edu.institute || ""}
+                </div>
+
+                <div class="edu-year">
+                    ${edu.year || ""}
+                </div>
+
+            </div>
+
+            `)
+            .join("")}
+
+    </div>
+
+    `;
+}
+
+/* PDF */
+
+function downloadPDF(){
+
+    const element =
+        document.getElementById("resumeContent");
+
+    const options = {
+
+        margin:0,
+
+        filename:"AI_Resume.pdf",
+
+        image:{
+            type:"jpeg",
+            quality:1
+        },
+
+        html2canvas:{
+            scale:3,
+            useCORS:true
+        },
+
+        jsPDF:{
+            unit:"mm",
+            format:"a4",
+            orientation:"portrait"
+        }
+
+    };
+
+    html2pdf()
+        .set(options)
+        .from(element)
+        .save();
+}
+
+</script>
+
+</body>
+</html>

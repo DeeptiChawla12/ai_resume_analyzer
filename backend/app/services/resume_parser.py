@@ -2,7 +2,6 @@ import pdfplumber
 import docx
 import io
 
-
 class ResumeParser:
 
     def extract_text(self, file_bytes, filename):
@@ -24,3 +23,4 @@ class ResumeParser:
 
         else:
             return "Unsupported format"
+
