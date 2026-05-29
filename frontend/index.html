@@ -1,80 +1,253 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>AI Resume Analyzer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<link rel="stylesheet" href="css/style.css">
+    <title>AI Resume Analyzer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<div class="header">
-AI Resume Analyzer
-</div>
+    <div class="background-blur"></div>
 
-<div class="container">
+    <!-- NAVBAR -->
 
-<div class="card">
+    <header class="navbar">
 
-<h3>Upload Resume</h3>
+        <div class="logo-section">
 
-<input type="file" id="resumeFile">
+            <div class="logo-icon">
+                AI
+            </div>
 
-<h3>Paste Job Description</h3>
+            <div>
 
-<textarea id="jobDesc" placeholder="Paste job description here"></textarea>
+                <h2>AI Resume Analyzer</h2>
 
-<button id="analyzeBtn">Analyze Resume</button>
+                <p>
+                    Production-Level ATS Resume Intelligence
+                </p>
 
-<div id="loader" class="loader-container" style="display:none;">
-<div class="spinner"></div>
-<p>Analyzing Resume... Please wait</p>
-</div>
+            </div>
 
-</div>
+        </div>
 
-<div class="card">
+    </header>
 
-<h3>ATS Score</h3>
+    <!-- MAIN -->
 
-<div class="score" id="atsScore">0%</div>
+    <main class="main-container">
 
-</div>
+        <section class="hero-card">
 
-<div class="grid">
+            <!-- LEFT -->
 
-<div class="card">
+            <div class="left-section">
 
-<h3>Skills Detected</h3>
+                <div class="badge">
+                    AI Powered Resume Screening
+                </div>
 
-<div id="skills"></div>
+                <h1>
+                    Get Instant ATS Score & Resume Insights
+                </h1>
 
-</div>
+                <p class="hero-text">
+                    Upload your resume and compare it against any job description using AI-powered
+                    resume intelligence, ATS scoring, skill matching, and interview preparation.
+                </p>
 
-<div class="card">
+                <!-- UPLOAD -->
 
-<h3>Missing Skills</h3>
+                <div class="upload-box">
 
-<div id="missingSkills"></div>
+                    <label class="upload-label">
 
-</div>
+                        <input type="file" id="resumeFile">
 
-</div>
+                        <div class="upload-content">
 
-<div class="card">
+                            <div class="upload-icon">
+                                ↑
+                            </div>
 
-<h3>Interview Questions</h3>
+                            <h3>
+                                Upload Resume
+                            </h3>
 
-<ul id="questions"></ul>
+                            <p>
+                                PDF / DOC / DOCX Supported
+                            </p>
 
-</div>
+                            <!-- FILE NAME -->
 
-</div>
+                            <div
+                                id="fileName"
+                                class="file-name"
+                            >
+                                No file selected
+                            </div>
 
-<script src="js/script.js"></script>
+                        </div>
+
+                    </label>
+
+                </div>
+
+                <!-- JOB DESCRIPTION -->
+
+                <div class="jd-section">
+
+                    <label>
+                        Job Description
+                    </label>
+
+                    <textarea
+                        id="jobDesc"
+                        placeholder="Paste the job description here..."
+                    ></textarea>
+
+                </div>
+
+                <!-- BUTTONS -->
+
+                <div class="button-group">
+
+                    <button id="analyzeBtn">
+                        Analyze Resume
+                    </button>
+
+                    <button id="generateBtn">
+                        Generate ATS Resume
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="right-section">
+
+                <div class="score-card">
+
+                    <div class="score-header">
+                        ATS Match Score
+                    </div>
+
+                    <div class="circle-wrapper">
+
+                        <div class="circle">
+
+                            <div
+                                class="score"
+                                id="atsScore"
+                            >
+                                0%
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <p class="score-subtitle">
+                        AI-generated compatibility score based on resume-job matching.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ANALYTICS -->
+
+        <section class="analytics-grid">
+
+            <div class="analytics-card">
+
+                <div class="card-title">
+                    Skills Detected
+                </div>
+
+                <div
+                    id="skills"
+                    class="skills-container"
+                ></div>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <div class="card-title">
+                    Missing Skills
+                </div>
+
+                <div
+                    id="missingSkills"
+                    class="skills-container"
+                ></div>
+
+            </div>
+
+        </section>
+
+        <!-- QUESTIONS -->
+
+        <section class="questions-card">
+
+            <div class="card-title">
+                AI Interview Questions
+            </div>
+
+            <ul id="questions"></ul>
+
+        </section>
+
+    </main>
+
+    <!-- ANALYSIS POPUP -->
+
+    <div id="analysisPopup" class="analysis-popup">
+
+        <div class="popup-card">
+
+            <div class="ai-loader">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <h2>
+                AI Resume Analysis Running
+            </h2>
+
+            <p>
+                Please wait while AI analyzes your resume and job description...
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>
