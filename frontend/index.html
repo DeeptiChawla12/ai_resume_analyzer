@@ -24,8 +24,6 @@
 
     <div class="background-blur"></div>
 
-    <!-- NAVBAR -->
-
     <header class="navbar">
 
         <div class="logo-section">
@@ -48,13 +46,9 @@
 
     </header>
 
-    <!-- MAIN -->
-
     <main class="main-container">
 
         <section class="hero-card">
-
-            <!-- LEFT -->
 
             <div class="left-section">
 
@@ -70,8 +64,6 @@
                     Upload your resume and compare it against any job description using AI-powered
                     resume intelligence, ATS scoring, skill matching, and interview preparation.
                 </p>
-
-                <!-- UPLOAD -->
 
                 <div class="upload-box">
 
@@ -93,8 +85,6 @@
                                 PDF / DOC / DOCX Supported
                             </p>
 
-                            <!-- FILE NAME -->
-
                             <div
                                 id="fileName"
                                 class="file-name"
@@ -107,8 +97,6 @@
                     </label>
 
                 </div>
-
-                <!-- JOB DESCRIPTION -->
 
                 <div class="jd-section">
 
@@ -123,8 +111,6 @@
 
                 </div>
 
-                <!-- BUTTONS -->
-
                 <div class="button-group">
 
                     <button id="analyzeBtn">
@@ -138,8 +124,6 @@
                 </div>
 
             </div>
-
-            <!-- RIGHT -->
 
             <div class="right-section">
 
@@ -174,8 +158,6 @@
 
         </section>
 
-        <!-- ANALYTICS -->
-
         <section class="analytics-grid">
 
             <div class="analytics-card">
@@ -206,8 +188,6 @@
 
         </section>
 
-        <!-- QUESTIONS -->
-
         <section class="questions-card">
 
             <div class="card-title">
@@ -219,8 +199,6 @@
         </section>
 
     </main>
-
-    <!-- ANALYSIS POPUP -->
 
     <div id="analysisPopup" class="analysis-popup">
 
@@ -241,6 +219,86 @@
             <p>
                 Please wait while AI analyzes your resume and job description...
             </p>
+
+        </div>
+
+    </div>
+
+    <div id="templateModal" class="template-modal">
+
+        <div class="template-modal-card">
+
+            <div class="template-modal-header">
+                <h2>Select a Resume Template</h2>
+                <button id="closeTemplateBtn" class="close-modal-btn">&times;</button>
+            </div>
+
+            <div class="template-grid">
+                <div class="template-item" data-template-id="1">
+                    <div class="template-preview">
+                        <img src="images/template1.png" alt="Minimalist Modern" class="template-img" onerror="this.src='https://placehold.co/300x400/1e293b/ffffff?text=Minimalist+Modern'">
+                    </div>
+                    <p>Minimalist Modern</p>
+                </div>
+                <div class="template-item" data-template-id="2">
+                    <div class="template-preview">
+                        <img src="images/template2.png" alt="Executive Premium" class="template-img" onerror="this.src='https://placehold.co/300x400/1e293b/ffffff?text=Executive+Premium'">
+                    </div>
+                    <p>Executive Premium</p>
+                </div>
+                <div class="template-item" data-template-id="3">
+                    <div class="template-preview">
+                        <img src="images/template3.png" alt="Creative Tech" class="template-img" onerror="this.src='https://placehold.co/300x400/1e293b/ffffff?text=Creative+Tech'">
+                    </div>
+                    <p>Creative Tech</p>
+                </div>
+                <div class="template-item" data-template-id="4">
+                    <div class="template-preview">
+                        <img src="images/template4.png" alt="Elegant Classic" class="template-img" onerror="this.src='https://placehold.co/300x400/1e293b/ffffff?text=Elegant+Classic'">
+                    </div>
+                    <p>Elegant Classic</p>
+                </div>
+                <div class="template-item" data-template-id="5">
+                    <div class="template-preview">
+                        <img src="images/template5.png" alt="Bold Corporate" class="template-img" onerror="this.src='https://placehold.co/300x400/1e293b/ffffff?text=Bold+Corporate'">
+                    </div>
+                    <p>Bold Corporate</p>
+                </div>
+                <div class="template-item" data-template-id="6">
+                    <div class="template-preview">
+                        <img src="images/template6.png" alt="Academic CV" class="template-img" onerror="this.src='https://placehold.co/300x400/1e293b/ffffff?text=Academic+CV'">
+                    </div>
+                    <p>Academic CV</p>
+                </div>
+                <div class="template-item" data-template-id="7">
+                    <div class="template-preview">
+                        <img src="images/template7.png" alt="Startup Tech" class="template-img" onerror="this.src='https://placehold.co/300x400/1e293b/ffffff?text=Startup+Tech'">
+                    </div>
+                    <p>Startup Tech</p>
+                </div>
+                <div class="template-item" data-template-id="8">
+                    <div class="template-preview">
+                        <img src="images/template8.png" alt="Minimalist Clean" class="template-img" onerror="this.src='https://placehold.co/300x400/1e293b/ffffff?text=Minimalist+Clean'">
+                    </div>
+                    <p>Minimalist Clean</p>
+                </div>
+                <div class="template-item" data-template-id="9">
+                    <div class="template-preview">
+                        <img src="images/template9.png" alt="Professional Sleek" class="template-img" onerror="this.src='https://placehold.co/300x400/1e293b/ffffff?text=Professional+Sleek'">
+                    </div>
+                    <p>Professional Sleek</p>
+                </div>
+                <div class="template-item" data-template-id="10">
+                    <div class="template-preview">
+                        <img src="images/template10.png" alt="Compact Hybrid" class="template-img" onerror="this.src='https://placehold.co/300x400/1e293b/ffffff?text=Compact+Hybrid'">
+                    </div>
+                    <p>Compact Hybrid</p>
+                </div>
+            </div>
+
+            <button id="confirmTemplateBtn" class="confirm-template-btn" disabled>
+                Continue to Generation
+            </button>
 
         </div>
 

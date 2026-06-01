@@ -19,6 +19,13 @@ const popupTitle =
 const popupText =
     document.querySelector(".popup-card p");
 
+/* TEMPLATE SELECTION SELECTORS */
+const templateModal = document.getElementById("templateModal");
+const closeTemplateBtn = document.getElementById("closeTemplateBtn");
+const confirmTemplateBtn = document.getElementById("confirmTemplateBtn");
+const templateItems = document.querySelectorAll(".template-item");
+let selectedTemplateId = null;
+
 
 /* ======================================
    SHOW FILE NAME
@@ -201,34 +208,57 @@ analyzeBtn.addEventListener("click", async (e) => {
 
 
 /* ======================================
-   GENERATE RESUME
+   GENERATE RESUME (MODAL COUPLING INTERCEPTOR)
 ====================================== */
 
-generateBtn.addEventListener("click", async (e) => {
-
+generateBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const jobDesc =
-        document.getElementById("jobDesc").value;
-
     if (!resumeFile.files.length) {
-
         alert("Please upload resume");
-
         return;
     }
 
+    // Clear previous settings
+    selectedTemplateId = null;
+    templateItems.forEach(item => item.classList.remove("selected"));
+    confirmTemplateBtn.disabled = true;
+
+    // Show modal
+    templateModal.style.display = "flex";
+});
+
+closeTemplateBtn.addEventListener("click", () => {
+    templateModal.style.display = "none";
+});
+
+templateModal.addEventListener("click", (e) => {
+    if (e.target === templateModal) {
+        templateModal.style.display = "none";
+    }
+});
+
+templateItems.forEach(item => {
+    item.addEventListener("click", () => {
+        templateItems.forEach(i => i.classList.remove("selected"));
+        item.classList.add("selected");
+        
+        selectedTemplateId = item.getAttribute("data-template-id");
+        confirmTemplateBtn.disabled = false;
+    });
+});
+
+confirmTemplateBtn.addEventListener("click", async () => {
+    if (!selectedTemplateId) return;
+
+    templateModal.style.display = "none";
+
+    const jobDesc = document.getElementById("jobDesc").value;
     const formData = new FormData();
 
-    formData.append(
-        "file",
-        resumeFile.files[0]
-    );
-
-    formData.append(
-        "job_description",
-        jobDesc
-    );
+    formData.append("file", resumeFile.files[0]);
+    formData.append("job_description", jobDesc);
+    formData.append("template_id", String(selectedTemplateId));
 
     showPopup(
         "Generating ATS Resume",
@@ -236,44 +266,33 @@ generateBtn.addEventListener("click", async (e) => {
     );
 
     try {
-
         const response = await fetch(
-
             "http://127.0.0.1:8000/generate-resume",
-
             {
                 method: "POST",
                 body: formData
             }
         );
 
-        const data =
-            await response.json();
-
+        const data = await response.json();
         console.log(data);
 
         hidePopup();
 
-        /* IMPORTANT FIX */
-
+        /* LOCALSTORAGE REGISTRATION */
         localStorage.setItem(
-
             "generatedResume",
-
             JSON.stringify(data)
         );
 
-        window.location.href =
-            "resume.html";
+        // This key guarantees the next page can switch CSS styles dynamically
+        localStorage.setItem("selectedTemplateId", String(selectedTemplateId));
 
+        window.location.href = "resume.html";
     }
-
     catch(error){
-
         console.log(error);
-
         hidePopup();
-
         alert("Server Error");
     }
 });

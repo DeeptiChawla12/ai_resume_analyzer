@@ -12,9 +12,9 @@
 
 <style>
 
-/* =========================
-   GLOBAL
-========================= */
+/* ==========================================================================
+   GLOBAL BASE STYLES
+   ========================================================================== */
 
 *{
     margin:0;
@@ -23,390 +23,362 @@
 }
 
 body{
-
     background:#f3f4f6;
-
-    font-family:Arial, Helvetica, sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     padding:20px;
 }
 
-/* =========================
-   TOPBAR
-========================= */
+/* ==========================================================================
+   TOP ACTION BAR
+   ========================================================================== */
 
 .topbar{
-
     width:210mm;
-
     margin:auto;
-
     margin-bottom:15px;
-
     display:flex;
-
     gap:10px;
 }
 
 .btn{
-
     border:none;
-
     padding:10px 16px;
-
     border-radius:6px;
-
     font-size:13px;
-
     font-weight:600;
-
     cursor:pointer;
 }
 
 .back-btn{
-
     background:#374151;
-
     color:white;
 }
 
 .download-btn{
-
     background:#2563eb;
-
     color:white;
 }
 
-/* =========================
-   RESUME
-========================= */
+/* ==========================================================================
+   DEFAULT CORE LAYOUT BASE (TEMPLATE 1 - MINIMALIST MODERN)
+   ========================================================================== */
 
 .resume{
-
     width:210mm;
-
     min-height:297mm;
-
     margin:auto;
-
     background:white;
-
-    padding:24mm 18mm;
-
+    padding:20mm 16mm;
     color:#111827;
-
     box-shadow:0 2px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
 }
 
-/* =========================
-   HEADER
-========================= */
-
 .header{
-
     text-align:center;
-
     margin-bottom:24px;
 }
 
 .name{
-
     font-size:30px;
-
     font-weight:700;
-
     letter-spacing:0.5px;
 }
 
 .title{
-
     margin-top:5px;
-
     font-size:15px;
-
     font-weight:700;
-
     color:#2563eb;
 }
 
 .contact{
-
     margin-top:10px;
-
     font-size:11px;
-
     line-height:1.6;
-
     color:#4b5563;
 }
 
-/* =========================
-   SECTION
-========================= */
-
 .section{
-
     margin-top:20px;
+    width: 100%;
 }
 
 .section-title{
-
-    font-size:14px;
-
+    font-size:13px;
     font-weight:700;
-
     border-bottom:2px solid #2563eb;
-
     padding-bottom:5px;
-
     margin-bottom:12px;
-
     text-transform:uppercase;
-
     letter-spacing:0.7px;
 }
 
-/* =========================
-   SUMMARY
-========================= */
-
 .summary{
-
-    font-size:12px;
-
-    line-height:1.8;
-
+    font-size:11px;
+    line-height:1.7;
     color:#374151;
-
     text-align:justify;
 }
 
-/* =========================
-   SKILLS
-========================= */
-
 .skills{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:8px;
 }
 
 .skill{
-
-    padding:6px 12px;
-
+    padding:5px 10px;
     background:#eef2ff;
-
-    border-radius:5px;
-
+    border-radius:4px;
     font-size:11px;
-
     color:#111827;
 }
 
-/* =========================
-   EXPERIENCE
-========================= */
-
 .job{
-
-    margin-bottom:20px;
+    margin-bottom:16px;
 }
 
 .job-top{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:flex-start;
-
     gap:10px;
-
-    margin-bottom:6px;
+    margin-bottom:4px;
 }
 
 .job-left{
-
     flex:1;
 }
 
 .job-role{
-
-    font-size:13px;
-
+    font-size:12px;
     font-weight:700;
 }
 
 .job-company{
-
     font-size:12px;
-
     font-weight:600;
-
     color:#2563eb;
-
-    margin-top:2px;
+    margin-top:1px;
 }
 
 .job-location{
-
     font-size:11px;
-
     color:#6b7280;
-
-    margin-top:2px;
+    margin-top:1px;
 }
 
 .job-duration{
-
     font-size:11px;
-
     color:#6b7280;
-
     white-space:nowrap;
 }
 
-/* =========================
-   LIST
-========================= */
-
 ul{
-
-    padding-left:18px;
-
-    margin-top:8px;
+    padding-left:16px;
+    margin-top:6px;
 }
 
 li{
-
     font-size:11px;
-
-    line-height:1.7;
-
-    margin-bottom:4px;
-
+    line-height:1.6;
+    margin-bottom:3px;
     color:#374151;
 }
 
-/* =========================
-   EDUCATION
-========================= */
-
 .education{
-
-    margin-bottom:14px;
+    margin-bottom:12px;
 }
 
 .edu-degree{
-
-    font-size:13px;
-
+    font-size:12px;
     font-weight:700;
 }
 
 .edu-school{
-
-    font-size:12px;
-
+    font-size:11px;
     color:#2563eb;
-
-    margin-top:2px;
+    margin-top:1px;
 }
 
 .edu-year{
-
     font-size:11px;
-
     color:#6b7280;
-
-    margin-top:2px;
+    margin-top:1px;
 }
 
-/* =========================
-   ERROR
-========================= */
-
 .error{
-
     text-align:center;
-
     padding:40px;
-
     font-size:20px;
-
     color:red;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* ==========================================================================
+   DYNAMIC LAYOUT COMPILER ENGINE ARCHITECTURE (TEMPLATES 2 - 10)
+   ========================================================================== */
 
-@media(max-width:900px){
-
-    body{
-        padding:10px;
-    }
-
-    .topbar{
-
-        width:100%;
-
-        flex-direction:column;
-    }
-
-    .btn{
-        width:100%;
-    }
-
-    .resume{
-
-        width:100%;
-
-        min-height:auto;
-
-        padding:24px;
-    }
-
-    .job-top{
-        flex-direction:column;
-    }
-
-    .job-duration{
-        white-space:normal;
-    }
+/* --- TEMPLATE 2: EXECUTIVE PREMIUM (Left-hand Column Sidebar Layout) --- */
+.resume.layout-style-2 {
+    display: grid;
+    grid-template-columns: 60mm 1fr;
+    gap: 10mm;
+    padding: 0;
+}
+.resume.layout-style-2 .resume-sidebar-panel {
+    background: #1e293b;
+    color: #f8fafc;
+    padding: 20mm 6mm;
+    height: 100%;
+}
+.resume.layout-style-2 .resume-sidebar-panel .section-title {
+    color: #38bdf8;
+    border-bottom-color: #334155;
+}
+.resume.layout-style-2 .resume-sidebar-panel .contact,
+.resume.layout-style-2 .resume-sidebar-panel .edu-year,
+.resume.layout-style-2 .resume-sidebar-panel .edu-school {
+    color: #cbd5e1;
+}
+.resume.layout-style-2 .resume-sidebar-panel .skill {
+    background: #334155;
+    color: white;
+}
+.resume.layout-style-2 .resume-main-panel {
+    padding: 20mm 12mm 20mm 0;
+}
+.resume.layout-style-2 .header {
+    text-align: left;
+    margin-bottom: 20px;
 }
 
-/* =========================
-   PRINT
-========================= */
+/* --- TEMPLATE 3: CREATIVE TECH (Top Decorative Header Accent Strip) --- */
+.resume.layout-style-3 {
+    border-top: 10px solid #7c3aed;
+}
+.resume.layout-style-3 .title {
+    color: #7c3aed;
+}
+.resume.layout-style-3 .section-title {
+    border-bottom-color: #7c3aed;
+}
+.resume.layout-style-3 .job-company {
+    color: #7c3aed;
+}
+
+/* --- TEMPLATE 4: ELEGANT CLASSIC (Centered Text Layout With Fine Lines) --- */
+.resume.layout-style-4 .header { text-align: center; }
+.resume.layout-style-4 .section-title {
+    border-bottom: 1px solid #94a3b8;
+    text-align: center;
+}
+.resume.layout-style-4 .job-top {
+    text-align: left;
+}
+
+/* --- TEMPLATE 5: BOLD CORPORATE (Thick High-Contrast Dark Blocks) --- */
+.resume.layout-style-5 .section-title {
+    background: #111827;
+    color: white;
+    padding: 6px 12px;
+    border-bottom: none;
+}
+
+/* --- TEMPLATE 6: ACADEMIC CV (Classic Serif Look Without Borders) --- */
+.resume.layout-style-6 {
+    font-family: "Georgia", Times, serif;
+}
+.resume.layout-style-6 .section-title {
+    border-bottom: 1px solid #111827;
+    color: #111827;
+}
+.resume.layout-style-6 .title,
+.resume.layout-style-6 .job-company,
+.resume.layout-style-6 .edu-school {
+    color: #111827;
+    font-style: italic;
+}
+
+/* --- TEMPLATE 7: STARTUP TECH (Deep Purple Left Column Slate) --- */
+.resume.layout-style-7 {
+    display: grid;
+    grid-template-columns: 65mm 1fr;
+    gap: 8mm;
+    padding: 0;
+}
+.resume.layout-style-7 .resume-sidebar-panel {
+    background: #4c1d95;
+    color: white;
+    padding: 20mm 6mm;
+}
+.resume.layout-style-7 .resume-sidebar-panel .section-title {
+    color: #a78bfa;
+    border-bottom-color: #6d28d9;
+}
+.resume.layout-style-7 .resume-sidebar-panel .contact,
+.resume.layout-style-7 .resume-sidebar-panel .edu-year {
+    color: #ddd6fe;
+}
+.resume.layout-style-7 .resume-sidebar-panel .skill {
+    background: #6d28d9;
+    color: white;
+}
+.resume.layout-style-7 .resume-main-panel {
+    padding: 20mm 12mm 20mm 0;
+}
+.resume.layout-style-7 .header { text-align: left; }
+
+/* --- TEMPLATE 8: MINIMALIST CLEAN (Ultra Clean Charcoal Accents) --- */
+.resume.layout-style-8 .title { color: #4b5563; }
+.resume.layout-style-8 .section-title {
+    border-bottom: 1px dashed #4b5563;
+    color: #4b5563;
+}
+.resume.layout-style-8 .job-company, 
+.resume.layout-style-8 .edu-school { color: #4b5563; }
+.resume.layout-style-8 .skill { background: #f3f4f6; }
+
+/* --- TEMPLATE 9: PROFESSIONAL SLEEK (Dynamic Gradient Title Banner) --- */
+.resume.layout-style-9 .header {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: white;
+    padding: 24px;
+    border-radius: 8px;
+}
+.resume.layout-style-9 .header .title { color: #93c5fd; }
+.resume.layout-style-9 .header .contact { color: #e2e8f0; }
+
+/* --- TEMPLATE 10: COMPACT HYBRID (Two Column Inline Header Grid Grid) --- */
+.resume.layout-style-10 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 15px;
+    text-align: left;
+}
+.resume.layout-style-10 .contact { text-align: right; margin-top: 0; }
+
+/* ==========================================================================
+   PRINT RESPONSIVENESS OVERRIDES
+   ========================================================================== */
+
+@media(max-width:900px){
+    body{ padding:10px; }
+    .topbar{ width:100%; flex-direction:column; }
+    .btn{ width:100%; }
+    .resume{ width:100%; min-height:auto; padding:24px !important; display: flex !important; flex-direction: column !important; }
+    .resume-sidebar-panel, .resume-main-panel { padding: 0 !important; width: 100% !important; }
+    .job-top{ flex-direction:column; }
+    .job-duration{ white-space:normal; }
+}
 
 @media print{
-
-    body{
-
-        background:white;
-
-        padding:0;
-    }
-
-    .topbar{
-        display:none;
-    }
-
-    .resume{
-
-        width:100%;
-
-        min-height:auto;
-
-        box-shadow:none;
-
-        padding:20mm 16mm;
-    }
+    body{ background:white; padding:0; }
+    .topbar{ display:none; }
+    .resume{ width:100%; min-height:auto; box-shadow:none; }
 }
 
 </style>
@@ -415,266 +387,160 @@ li{
 
 <body>
 
-<!-- TOPBAR -->
-
 <div class="topbar">
-
-    <button class="btn back-btn"
-        onclick="history.back()">
-        ← Back
-    </button>
-
-    <button class="btn download-btn"
-        onclick="downloadPDF()">
-        Download PDF
-    </button>
-
+    <button class="btn back-btn" onclick="history.back()">← Back</button>
+    <button class="btn download-btn" onclick="downloadPDF()">Download PDF</button>
 </div>
 
-<!-- RESUME -->
-
-<div class="resume" id="resumeContent">
-
-</div>
+<div class="resume" id="resumeContent"></div>
 
 <script>
 
-const rawData =
-    localStorage.getItem("generatedResume");
+const rawData = localStorage.getItem("generatedResume");
+// Extract template context configurations saved safely into active memory
+const selectedTemplateId = localStorage.getItem("selectedTemplateId") || "1";
 
-console.log("RAW DATA:", rawData);
+console.log("RAW DATA STRUCTURE OBJECT:", rawData);
+console.log("ACTIVE RENDERING TEMPLATE CHOICE:", selectedTemplateId);
 
 if(!rawData){
-
     document.getElementById("resumeContent").innerHTML = `
-        <div class="error">
-            No Resume Data Found
-        </div>
+        <div class="error">No Resume Data Found</div>
     `;
 }
-
 else{
-
     const data = JSON.parse(rawData);
+    const container = document.getElementById("resumeContent");
+    
+    // Mount layout class straight onto viewport canvas container reference
+    container.classList.add(`layout-style-${selectedTemplateId}`);
 
-    console.log("PARSED DATA:", data);
+    /* ==========================================================================
+       SUB-TEMPLATE BLOCK RENDER SCHEMES
+       ========================================================================== */
 
-    document.getElementById("resumeContent").innerHTML = `
-
-    <!-- HEADER -->
-
-    <div class="header">
-
-        <div class="name">
-            ${data.name || ""}
+    const headerHTML = `
+        <div class="header">
+            <div class="name">${data.name || ""}</div>
+            <div class="title">${data.title || ""}</div>
+            <div class="contact">${data.contact || ""}</div>
         </div>
-
-        <div class="title">
-            ${data.title || ""}
-        </div>
-
-        <div class="contact">
-            ${data.contact || ""}
-        </div>
-
-    </div>
-
-    <!-- SUMMARY -->
-
-    <div class="section">
-
-        <div class="section-title">
-            Professional Summary
-        </div>
-
-        <div class="summary">
-            ${data.summary || ""}
-        </div>
-
-    </div>
-
-    <!-- SKILLS -->
-
-    <div class="section">
-
-        <div class="section-title">
-            Technical Skills
-        </div>
-
-        <div class="skills">
-
-            ${(data.skills || [])
-                .map(skill => `
-                    <div class="skill">
-                        ${skill}
-                    </div>
-                `)
-                .join("")}
-
-        </div>
-
-    </div>
-
-    <!-- EXPERIENCE -->
-
-    <div class="section">
-
-        <div class="section-title">
-            Professional Experience
-        </div>
-
-        ${(data.experience || [])
-            .map(exp => `
-
-            <div class="job">
-
-                <div class="job-top">
-
-                    <div class="job-left">
-
-                        <div class="job-role">
-                            ${exp.role || ""}
-                        </div>
-
-                        <div class="job-company">
-                            ${exp.company || ""}
-                        </div>
-
-                        <div class="job-location">
-                            ${exp.location || ""}
-                        </div>
-
-                    </div>
-
-                    <div class="job-duration">
-                        ${exp.duration || ""}
-                    </div>
-
-                </div>
-
-                <ul>
-
-                    ${(exp.points || [])
-                        .map(point => `
-                            <li>${point}</li>
-                        `)
-                        .join("")}
-
-                </ul>
-
-            </div>
-
-            `)
-            .join("")}
-
-    </div>
-
-    <!-- PROJECTS -->
-
-    <div class="section">
-
-        <div class="section-title">
-            Projects
-        </div>
-
-        ${(data.projects || [])
-            .map(project => `
-
-            <div class="job">
-
-                <div class="job-role">
-                    ${project.title || ""}
-                </div>
-
-                <ul>
-
-                    ${(project.points || [])
-                        .map(point => `
-                            <li>${point}</li>
-                        `)
-                        .join("")}
-
-                </ul>
-
-            </div>
-
-            `)
-            .join("")}
-
-    </div>
-
-    <!-- EDUCATION -->
-
-    <div class="section">
-
-        <div class="section-title">
-            Education
-        </div>
-
-        ${(data.education || [])
-            .map(edu => `
-
-            <div class="education">
-
-                <div class="edu-degree">
-                    ${edu.degree || ""}
-                </div>
-
-                <div class="edu-school">
-                    ${edu.institute || ""}
-                </div>
-
-                <div class="edu-year">
-                    ${edu.year || ""}
-                </div>
-
-            </div>
-
-            `)
-            .join("")}
-
-    </div>
-
     `;
+
+    const summaryHTML = `
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <div class="summary">${data.summary || ""}</div>
+        </div>
+    `;
+
+    const skillsHTML = `
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <div class="skills">
+                ${(data.skills || []).map(skill => `<div class="skill">${skill}</div>`).join("")}
+            </div>
+        </div>
+    `;
+
+    const experienceHTML = `
+        <div class="section">
+            <div class="section-title">Professional Experience</div>
+            ${(data.experience || []).map(exp => `
+                <div class="job">
+                    <div class="job-top">
+                        <div class="job-left">
+                            <div class="job-role">${exp.role || ""}</div>
+                            <div class="job-company">${exp.company || ""}</div>
+                            <div class="job-location">${exp.location || ""}</div>
+                        </div>
+                        <div class="job-duration">${exp.duration || ""}</div>
+                    </div>
+                    <ul>
+                        ${(exp.points || []).map(point => `<li>${point}</li>`).join("")}
+                    </ul>
+                </div>
+            `).join("")}
+        </div>
+    `;
+
+    const projectsHTML = `
+        <div class="section">
+            <div class="section-title">Projects</div>
+            ${(data.projects || []).map(project => `
+                <div class="job">
+                    <div class="job-role">${project.title || ""}</div>
+                    <ul>
+                        ${(project.points || []).map(point => `<li>${point}</li>`).join("")}
+                    </ul>
+                </div>
+            `).join("")}
+        </div>
+    `;
+
+    const educationHTML = `
+        <div class="section">
+            <div class="section-title">Education</div>
+            ${(data.education || []).map(edu => `
+                <div class="education">
+                    <div class="edu-degree">${edu.degree || ""}</div>
+                    <div class="edu-school">${edu.institute || ""}</div>
+                    <div class="edu-year">${edu.year || ""}</div>
+                </div>
+            `).join("")}
+        </div>
+    `;
+
+    /* ==========================================================================
+       TEMPLATE STRUCTURAL COMPILER DISPATCHER
+       ========================================================================== */
+
+    // Templates 2 and 7 require structural changes (Left Sidebar Column layout grid structures)
+    if (selectedTemplateId === "2" || selectedTemplateId === "7") {
+        container.innerHTML = `
+            <div class="resume-sidebar-panel">
+                <div class="header" style="text-align: left;">
+                    <div class="name" style="font-size: 24px;">${data.name || ""}</div>
+                    <div class="title" style="font-size: 13px; margin-bottom: 15px;">${data.title || ""}</div>
+                    <div class="contact" style="text-align: left;">${data.contact || ""}</div>
+                </div>
+                ${skillsHTML}
+                ${educationHTML}
+            </div>
+            <div class="resume-main-panel">
+                ${summaryHTML}
+                ${experienceHTML}
+                ${projectsHTML}
+            </div>
+        `;
+    } else {
+        // Standard structural single column templates (Templates 1, 3, 4, 5, 6, 8, 9, 10)
+        container.innerHTML = `
+            ${headerHTML}
+            ${summaryHTML}
+            ${skillsHTML}
+            ${experienceHTML}
+            ${projectsHTML}
+            ${educationHTML}
+        `;
+    }
 }
 
-/* PDF */
-
+/* ==========================================================================
+   PDF ENGINE WRAPPER EXECUTION
+   ========================================================================== */
 function downloadPDF(){
-
-    const element =
-        document.getElementById("resumeContent");
-
+    const element = document.getElementById("resumeContent");
     const options = {
-
-        margin:0,
-
-        filename:"AI_Resume.pdf",
-
-        image:{
-            type:"jpeg",
-            quality:1
-        },
-
-        html2canvas:{
-            scale:3,
-            useCORS:true
-        },
-
-        jsPDF:{
-            unit:"mm",
-            format:"a4",
-            orientation:"portrait"
-        }
-
+        margin: 0,
+        filename: "AI_Resume.pdf",
+        image: { type: "jpeg", quality: 1 },
+        html2canvas: { scale: 3, useCORS: true },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
     };
 
-    html2pdf()
-        .set(options)
-        .from(element)
-        .save();
+    html2pdf().set(options).from(element).save();
 }
-
 </script>
 
 </body>
